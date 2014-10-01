@@ -5,7 +5,20 @@ public class State {
 	private String name;
 	
 	private Country country;
+	
+	public State(){
+		
+	}
 
+	public State(String name) {
+		this(name,null);
+	}
+
+	public State(String name, Country country){
+		this.name = name;
+		this.country = country;
+	}
+	
 	public String getName() {
 		return name;
 	}

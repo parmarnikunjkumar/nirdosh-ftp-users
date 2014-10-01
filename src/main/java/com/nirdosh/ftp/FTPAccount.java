@@ -1,5 +1,7 @@
 package com.nirdosh.ftp;
 
+import javax.print.DocFlavor.STRING;
+
 public class FTPAccount {
 	
 	private String userName;
@@ -9,6 +11,20 @@ public class FTPAccount {
 	private String url;
 	
 	private FTPAccountType type;
+
+	public FTPAccount(){
+		
+	}
+	
+	public FTPAccount(String userName, FTPAccountType type) {
+		this(userName,type, null);
+	}
+	
+	public FTPAccount(String userName, FTPAccountType type, String password) {
+		this.userName = userName;
+		this.type = type;
+		this.password = password;
+	}
 
 	public String getUserName() {
 		return userName;
