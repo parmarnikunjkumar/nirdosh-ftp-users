@@ -3,14 +3,20 @@ package com.nirdosh.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import com.nirdosh.ftp.FTPAccount;
 
+@Entity
 public class User {
 	
-	@Id
-	private String id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	
 	private String name;
 	
@@ -25,6 +31,16 @@ public class User {
 	private List<EmailAddress> emails;
 	
 	private boolean isCommingToAYM;
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
